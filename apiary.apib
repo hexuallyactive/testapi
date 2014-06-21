@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 # gmi-presenter
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+GMI Toolbox API
 
 # Group Notes
 Notes related resources of the **Notes API**
@@ -44,3 +44,28 @@ A single Note object with all its details
 
 ### Remove a Note [DELETE]
 + Response 204
+
+# Group Presentations
+Presentation related resources of the **Presentations API**
+
+## Presentations Collection [/presentations]
+### List all Presentations [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "p1"
+        }, {
+          "id": 2, "title": "p2"
+        }]
+
+### Retrieve a Note [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "p1" }
+
