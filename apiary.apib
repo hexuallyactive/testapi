@@ -34,7 +34,7 @@ A single Visit object with all its details
             { "id": 2, "title": "Pick-up posters from post-office" }
             
 # Group Panorama
-Panorama controls
+Panorama application control
 
 ## Panorama Collection [/panorama]
 ### List all Panoramas [GET]
@@ -54,6 +54,60 @@ Panorama controls
             { "status": "ok" }
 
 ## Panorama Close [/panorama/close/{id}]      
+### Close Active Panorama [POST]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+# Group Consumer Insight
+Consumer Insight application control
+
+## Consumer Insight Collection [/insight]
+### List all Consumer Insights [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "p1"
+        }, {
+          "id": 2, "title": "p2"
+        }]
+  
+## Consumer Insight Active [/insight/activate/{id}]      
+### Set Consumer Insight Active [POST]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+## Consumer Insight Close [/insight/close/{id}]      
+### Close Active Panorama [POST]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+# Group Assets
+Asset control
+
+## Asset Collection [/asset]
+### List all Assets [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "p1"
+        }, {
+          "id": 2, "title": "p2"
+        }]
+  
+## Asset Select [/asset/select/{id}]      
+### Set Consumer Insight Active [POST]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+## Asset Move [/asset/move/{id}/{displayid}]      
 ### Close Active Panorama [POST]
 + Response 200 (application/json)
     + Body
