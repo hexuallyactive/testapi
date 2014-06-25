@@ -3,6 +3,26 @@ FORMAT: 1A
 # gmi-presenter
 GMI Toolbox API
 
+# Group Mode
+Center Mode control
+
+## Mode Collection [/mode]
+### List all Assets [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "p1"
+        }, {
+          "id": 2, "title": "p2"
+        }]
+  
+## Mode Select [/mode/select/{id}]      
+### Set Consumer Insight Active [POST]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
 # Group Visits
 Presentation related resources of the **Visits API**
 
