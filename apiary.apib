@@ -16,12 +16,12 @@ Center Mode control
           "id": 2, "title": "p2"
         }]
   
-## Mode Select [/mode/select/{id}]
+## Mode Select [/mode/{id}]
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Mode to perform action with.
 
-### Set Mode Active [POST]
+### Set Mode Active [PUT]
 + Response 200 (application/json)
     + Body
     
@@ -45,7 +45,7 @@ Feed control
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Mode to perform action with.
 
-### Set Feed Active [POST]
+### Set Feed Active [PUT]
 + Response 200 (application/json)
     + Body
     
@@ -95,14 +95,14 @@ Panorama application control
         }]
   
 ## Panorama Active [/panorama/activate/{id}]      
-### Set Panorama Active [POST]
+### Set Panorama Active [PUT]
 + Response 200 (application/json)
     + Body
     
             { "status": "ok" }
 
 ## Panorama Close [/panorama/close/{id}]      
-### Close Active Panorama [POST]
+### Close Active Panorama [PUT]
 + Response 200 (application/json)
     + Body
     
@@ -122,14 +122,14 @@ Consumer Insight application control
         }]
   
 ## Consumer Insight Active [/insight/activate/{id}]      
-### Set Consumer Insight Active [POST]
+### Set Consumer Insight Active [PUT]
 + Response 200 (application/json)
     + Body
     
             { "status": "ok" }
 
 ## Consumer Insight Close [/insight/close/{id}]      
-### Close Active Panorama [POST]
+### Close Active Panorama [PUT]
 + Response 200 (application/json)
     + Body
     
@@ -149,14 +149,14 @@ Asset control
         }]
   
 ## Asset Select [/asset/select/{id}]      
-### Set Consumer Insight Active [POST]
+### Set Consumer Insight Active [PUT]
 + Response 200 (application/json)
     + Body
     
             { "status": "ok" }
 
 ## Asset Move [/asset/move/{id}/display/{displayid}]      
-### Close Active Panorama [POST]
+### Close Active Panorama [PUT]
 + Response 200 (application/json)
     + Body
     
@@ -191,13 +191,7 @@ A single Presentation object with all its details
     + Body
 
             { "id": 2, "title": "Pick-up posters from post-office" }
-            
-### Create a Presentation [POST]
-+ Response 405
 
 ### Update a Presentation [PUT]
-+ Response 405
-            
-### Remove a Presentation [DELETE]
 + Response 405
 
