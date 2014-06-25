@@ -37,7 +37,7 @@ A single Visit object with all its details
 Panorama controls
 
 ## Panorama Collection [/panorama]
-### List all Presentations [GET]
+### List all Panoramas [GET]
 + Response 200 (application/json)
 
         [{
@@ -46,8 +46,15 @@ Panorama controls
           "id": 2, "title": "p2"
         }]
   
-## Panorama Active [/panorama/{id}]      
+## Panorama Active [/panorama/activate/{id}]      
 ### Set Panorama Active [POST]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+## Panorama Close [/panorama/close/{id}]      
+### Close Active Panorama [POST]
 + Response 200 (application/json)
     + Body
     
