@@ -63,18 +63,6 @@ External Sources control
         }
         ]
 
-## External Source Command [/source/id/{id}/command/{command}]
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Mode to perform action with.
-    + command (required, string, ``) ... String `command` accepts `prev` and `next`
-    
-### Set Feed Active [PUT]
-+ Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
-
 # Group Feed
 Feed control
 
@@ -147,7 +135,7 @@ Panorama application control
     + id (required, number, `1`) ... Numeric `id` of the Panorama to perform action with.
     + command (required, string, ``) ... String `command` accepts `activate`, `close`
 
-### Set Panorama Active [PUT]
+### Send Panorama Command [PUT]
 + Response 200 (application/json)
     + Body
     
@@ -172,7 +160,7 @@ Consumer Insight application control
     + id (required, number, `1`) ... Numeric `id` of the Consumer Insight to perform action with.
     + command (required, string, ``) ... String `command` accepts `activate`, `prev` and `next`
     
-### Set Consumer Insight Active [PUT]
+### Send Consumer Insight Command [PUT]
 + Response 200 (application/json)
     + Body
     
