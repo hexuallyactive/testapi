@@ -6,17 +6,19 @@ GMI Toolbox API
 # Group Mode
 Center Mode control
 
-## Mode Collection [/mode]
+## Mode Collection [/modes]
 ### List all Assets [GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "p1"
+          "id": 1, "name": "Welcome"
         }, {
-          "id": 2, "title": "p2"
-        }]
+          "id": 2, "name": "Presentation"
+        },
+          "id": 3, "name": "Break"
+        ]
   
-## Mode Select [/mode/{id}]
+## Mode Select [/mode/id/{id}]
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Mode to perform action with.
@@ -30,28 +32,38 @@ Center Mode control
 # Group External Sources
 External Sources control
 
-## External Sources Collection [/source]
+## External Sources Collection [/sources]
 ### List all Feeds [GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "p1"
+          "id": 1, "name": "Left Arc Exterior", "type": "primary"
         }, {
-          "id": 2, "title": "p2"
-        }]
-  
-## External Source Select [/source/{id}]
+          "id": 2, "name": "Left Arc Interior", "type": "primary"
+        }, {
+          "id": 3, "name": "Center", "type": "primary"
+        }, {
+          "id": 4, "name": "Right Arc Interior", "type": "primary"
+        }, {
+          "id": 5, "name": "Right Arc Exterior", "type": "primary"
+        }, {
+          "id": 6, "name": "Participant Tablet", "type": "primary"
+        }, {
+          "id": 7, "name": "Beacon", "type": "secondary"
+        }, {
+          "id": 8, "name": "Learn and Share Table", "type": "secondary"
+        }, {
+          "id": 9, "name": "Conference Room 1", "type": "secondary"
+        }, {
+          "id": 10, "name": "Conference Room 2", "type": "secondary"
+        }, {
+          "id": 11, "name": "Kitchen", "type": "secondary"
+        }, {
+          "id": 12, "name": "Virtual Store", "type": "secondary"
+        }
+        ]
 
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Mode to perform action with.
-
-### Set Feed Active [PUT]
-+ Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
-
-## External Source Command [/source/{id}/command/{command}]
+## External Source Command [/source/id/{id}/command/{command}]
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Mode to perform action with.
@@ -66,17 +78,15 @@ External Sources control
 # Group Feed
 Feed control
 
-## Feed Collection [/feed]
+## Feed Collection [/feeds]
 ### List all Feeds [GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "p1"
-        }, {
-          "id": 2, "title": "p2"
+          "id": 1, "name": "Test Feed"
         }]
   
-## Feed Select [/feed/select/{id}]
+## Feed Select [/feed/id/{id}]
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Mode to perform action with.
@@ -90,17 +100,17 @@ Feed control
 # Group Visits
 Visit related resources of the **Visits API**
 
-## Visits Collection [/visit]
+## Visits Collection [/visits]
 ### List all Visits [GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "p1"
+          "id": 1, "name": "Visit 1"
         }, {
-          "id": 2, "title": "p2"
+          "id": 2, "name": "Visit 2"
         }]
             
-## Visit [/visit/{id}]
+## Visit [/visit/id/{id}]
 A single Visit object with all its details
 
 + Parameters
@@ -115,30 +125,29 @@ A single Visit object with all its details
 
     + Body
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
+            { "id": 2, "title": "need mock data..." }
             
 # Group Panorama
 Panorama application control
 
-## Panorama Collection [/panorama]
+## Panorama Collection [/panoramas]
+
 ### List all Panoramas [GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "p1"
+          "id": 1, "name": "Panorama 1"
         }, {
-          "id": 2, "title": "p2"
+          "id": 2, "name": "Panorama 2"
         }]
   
-## Panorama Active [/panorama/activate/{id}]      
-### Set Panorama Active [PUT]
-+ Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
+## Panorama Command [/panorama/id/{id}/command/{command}]
 
-## Panorama Close [/panorama/close/{id}]      
-### Close Active Panorama [PUT]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Panorama to perform action with.
+    + command (required, string, ``) ... String `command` accepts `activate`, `close`
+
+### Set Panorama Active [PUT]
 + Response 200 (application/json)
     + Body
     
@@ -147,25 +156,23 @@ Panorama application control
 # Group Consumer Insight
 Consumer Insight application control
 
-## Consumer Insight Collection [/insight]
+## Consumer Insight Collection [/insights]
 ### List all Consumer Insights [GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "p1"
+          "id": 1, "name": "Insight 1"
         }, {
-          "id": 2, "title": "p2"
+          "id": 2, "name": "Insight 2"
         }]
   
-## Consumer Insight Active [/insight/activate/{id}]      
-### Set Consumer Insight Active [PUT]
-+ Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
+## Consumer Insight Command [/insight/id/{id}/command/{command}]   
 
-## Consumer Insight Close [/insight/close/{id}]      
-### Close Active Panorama [PUT]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Consumer Insight to perform action with.
+    + command (required, string, ``) ... String `command` accepts `activate`, `prev` and `next`
+    
+### Set Consumer Insight Active [PUT]
 + Response 200 (application/json)
     + Body
     
@@ -174,24 +181,22 @@ Consumer Insight application control
 # Group Assets
 Asset control
 
-## Asset Collection [/asset]
+## Asset Collection [/assets]
 ### List all Assets [GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "p1"
-        }, {
-          "id": 2, "title": "p2"
+          "id": 1, "name": "this will be a tree representation"
         }]
   
-## Asset Select [/asset/select/{id}]      
+## Asset Select [/asset/{id}/command/select]      
 ### Set Consumer Insight Active [PUT]
 + Response 200 (application/json)
     + Body
     
             { "status": "ok" }
 
-## Asset Move [/asset/move/{id}/display/{displayid}]      
+## Asset Move [/asset/id/{id}/command/move/display/{displayid}]      
 ### Close Active Panorama [PUT]
 + Response 200 (application/json)
     + Body
@@ -199,7 +204,7 @@ Asset control
             { "status": "ok" }
 
 # Group Presentations
-Presentation related resources of the **Presentations API**
+Presentation related resources of the **Presentation API**
 
 ## Presentations Collection [/presentations]
 ### List all Presentations [GET]
@@ -211,13 +216,13 @@ Presentation related resources of the **Presentations API**
           "id": 2, "title": "p2"
         }]
             
-## Presentation [/presentations/{id}]
+## Presentation [/presentation/{id}]
 A single Presentation object with all its details
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Presentation to perform action with.
 
-### Retrieve a Note [GET]
+### Retrieve a Presentation [GET]
 + Response 200 (application/json)
 
     + Header
@@ -228,6 +233,4 @@ A single Presentation object with all its details
 
             { "id": 2, "title": "Pick-up posters from post-office" }
 
-### Update a Presentation [PUT]
-+ Response 405
 
