@@ -22,7 +22,7 @@ This might need a paired websocket frame for state changes from other inputs
               "id": 3, "name": "Break", "active": false
             }]
   
-## Mode Select [/mode/id/{id}]
+## Mode Select [/mode/{id}]
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Mode to perform action with.
@@ -78,7 +78,7 @@ Feed control
           "id": 1, "name": "Test Feed"
         }]
   
-## Feed Select [/feed/id/{id}]
+## Feed Select [/feed/{id}]
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Mode to perform action with.
@@ -103,7 +103,7 @@ Panorama application control
           "id": 2, "name": "Panorama 2"
         }]
   
-## Panorama Command [/panorama/id/{id}/command/{command}]
+## Panorama Command [/panorama/{id}/command/{command}]
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Panorama to perform action with.
@@ -128,7 +128,7 @@ Consumer Insight application control
           "id": 2, "name": "Insight 2"
         }]
   
-## Consumer Insight Command [/insight/id/{id}/command/{command}]   
+## Consumer Insight Command [/insight/{id}/command/{command}]   
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Consumer Insight to perform action with.
@@ -151,7 +151,7 @@ Asset control
           "id": 1, "name": "this will be a tree representation"
         }]
 
-## Asset Placement [/asset/id/{id}/sourceid/{sourceid}] 
+## Asset Placement [/asset/{id}/sourceid/{sourceid}] 
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Asset to perform action with.
@@ -177,7 +177,7 @@ Visit control
           "id": 2, "name": "Visit 2"
         }]
             
-## Visit [/visit/id/{id}]
+## Visit [/visit/{id}]
 A single Visit object with all its details
 
 + Parameters
