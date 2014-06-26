@@ -151,12 +151,18 @@ Asset control
           "id": 1, "name": "this will be a tree representation"
         }]
 
-## Asset Placement [/asset/id/{id}/display/{displayid}]      
+## Asset Placement [/asset/id/{id}/sourceid/{sourceid}] 
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Asset to perform action with.
+    + sourceid (required, number, `1`) ... Numeric `sourceid` of the External Source to place Asset on
+
 ### Place Asset [PUT]
 + Response 200 (application/json)
     + Body
     
             { "status": "ok" }
+
 
 # Group Visits
 Visit control
