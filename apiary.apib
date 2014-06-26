@@ -1,22 +1,26 @@
-FORMAT: X-1A
+FORMAT: 1A
 
-# gmi-presenter
-GMI Toolbox API
+# General Mills
+Presenter Toolbox API
 
 # Group Mode
 Center Mode control
 
-## Mode Collection [/modes]
-### List all Assets [GET]
-+ Response 200 (application/json)
+## Mode Collection 
+This will most likey also need a paired websocket for state changes from other inputs
 
-        [{
-          "id": 1, "name": "Welcome"
-        }, {
-          "id": 2, "name": "Presentation"
-        },
-          "id": 3, "name": "Break"
-        ]
+## Mode Collection [/mode]
+### List all available Modes [GET]
++ Response 200 (application/json)
+    + Body
+    
+            [{
+              "id": 1, "name": "Welcome", "active": true
+            }, {
+              "id": 2, "name": "Presentation", "active": false
+            }, {
+              "id": 3, "name": "Break", "active": false
+            }]
   
 ## Mode Select [/mode/id/{id}]
 
@@ -32,41 +36,41 @@ Center Mode control
 # Group External Sources
 External Sources control
 
-## External Sources Collection [/sources]
-### List all Feeds [GET]
+## External Sources Collection [/source]
+### List all available Sources [GET]
 + Response 200 (application/json)
-
-        [{
-          "id": 1, "name": "Left Arc Exterior", "type": "primary"
-        }, {
-          "id": 2, "name": "Left Arc Interior", "type": "primary"
-        }, {
-          "id": 3, "name": "Center", "type": "primary"
-        }, {
-          "id": 4, "name": "Right Arc Interior", "type": "primary"
-        }, {
-          "id": 5, "name": "Right Arc Exterior", "type": "primary"
-        }, {
-          "id": 6, "name": "Participant Tablet", "type": "primary"
-        }, {
-          "id": 7, "name": "Beacon", "type": "secondary"
-        }, {
-          "id": 8, "name": "Learn and Share Table", "type": "secondary"
-        }, {
-          "id": 9, "name": "Conference Room 1", "type": "secondary"
-        }, {
-          "id": 10, "name": "Conference Room 2", "type": "secondary"
-        }, {
-          "id": 11, "name": "Kitchen", "type": "secondary"
-        }, {
-          "id": 12, "name": "Virtual Store", "type": "secondary"
-        }
-        ]
+    + Body
+    
+            [{
+              "id": 1, "name": "Left Arc Exterior", "type": "primary"
+            }, {
+              "id": 2, "name": "Left Arc Interior", "type": "primary"
+            }, {
+              "id": 3, "name": "Center", "type": "primary"
+            }, {
+              "id": 4, "name": "Right Arc Interior", "type": "primary"
+            }, {
+              "id": 5, "name": "Right Arc Exterior", "type": "primary"
+            }, {
+              "id": 6, "name": "Participant Tablet", "type": "primary"
+            }, {
+              "id": 7, "name": "Beacon", "type": "secondary"
+            }, {
+              "id": 8, "name": "Learn and Share Table", "type": "secondary"
+            }, {
+              "id": 9, "name": "Conference Room 1", "type": "secondary"
+            }, {
+              "id": 10, "name": "Conference Room 2", "type": "secondary"
+            }, {
+              "id": 11, "name": "Kitchen", "type": "secondary"
+            }, {
+              "id": 12, "name": "Virtual Store", "type": "secondary"
+            }]
 
 # Group Feed
 Feed control
 
-## Feed Collection [/feeds]
+## Feed Collection [/feed]
 ### List all Feeds [GET]
 + Response 200 (application/json)
 
@@ -84,41 +88,11 @@ Feed control
     + Body
     
             { "status": "ok" }
-
-# Group Visits
-Visit related resources of the **Visits API**
-
-## Visits Collection [/visits]
-### List all Visits [GET]
-+ Response 200 (application/json)
-
-        [{
-          "id": 1, "name": "Visit 1"
-        }, {
-          "id": 2, "name": "Visit 2"
-        }]
-            
-## Visit [/visit/id/{id}]
-A single Visit object with all its details
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Visit to perform action with.
-
-### Retrieve a Visit [GET]
-+ Response 200 (application/json)
-
-    + Header
-
-            X-My-Header: The Value
-
-    + Body
-
-            { "id": 2, "title": "need mock data..." }
             
 # Group Panorama
 Panorama application control
 
-## Panorama Collection [/panoramas]
+## Panorama Collection [/panorama]
 
 ### List all Panoramas [GET]
 + Response 200 (application/json)
@@ -144,7 +118,7 @@ Panorama application control
 # Group Consumer Insight
 Consumer Insight application control
 
-## Consumer Insight Collection [/insights]
+## Consumer Insight Collection [/insight]
 ### List all Consumer Insights [GET]
 + Response 200 (application/json)
 
@@ -169,32 +143,55 @@ Consumer Insight application control
 # Group Assets
 Asset control
 
-## Asset Collection [/assets]
+## Asset Collection [/asset]
 ### List all Assets [GET]
 + Response 200 (application/json)
 
         [{
           "id": 1, "name": "this will be a tree representation"
         }]
-  
-## Asset Select [/asset/{id}/command/select]      
-### Set Consumer Insight Active [PUT]
+
+## Asset Placement [/asset/id/{id}/display/{displayid}]      
+### Place Asset [PUT]
 + Response 200 (application/json)
     + Body
     
             { "status": "ok" }
 
-## Asset Move [/asset/id/{id}/command/move/display/{displayid}]      
-### Close Active Panorama [PUT]
+# Group Visits
+Visit control
+
+## Visits Collection [/visit]
+### List all Visits [GET]
 + Response 200 (application/json)
+
+        [{
+          "id": 1, "name": "Visit 1"
+        }, {
+          "id": 2, "name": "Visit 2"
+        }]
+            
+## Visit [/visit/id/{id}]
+A single Visit object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Visit to perform action with.
+
+### Retrieve a Visit [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
     + Body
-    
-            { "status": "ok" }
+
+            { "id": 2, "title": "need mock data..." }
 
 # Group Presentations
 Presentation related resources of the **Presentation API**
 
-## Presentations Collection [/presentations]
+## Presentations Collection [/presentation]
 ### List all Presentations [GET]
 + Response 200 (application/json)
 
@@ -213,12 +210,8 @@ A single Presentation object with all its details
 ### Retrieve a Presentation [GET]
 + Response 200 (application/json)
 
-    + Header
-
-            X-My-Header: The Value
-
     + Body
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
+            { "id": 1, "title": "Need mock data" }
 
 
