@@ -157,9 +157,10 @@ Asset control
 ### List all Assets [GET]
 + Response 200 (application/json)
 
-        [{
-          "id": 1, "name": "this will be a tree representation of folders and assets (any depth)"
-        }]
+        [
+        {"id": 1, "title": "Handouts", [{"id": 2, "title": "A file.pdf"},{"id": 3, "title": "Another file.pdf"}]},
+        {"id": 4, "title": "Images", [{"id": 5, "title": "hero.png"},{"id": 6, "title": "hamburger.jpg"}]}
+        ]
 
 ## Asset Placement [/asset/{id}/sourceid/{sourceid}] 
 
@@ -198,7 +199,10 @@ A single Visit object with all its details
 
     + Body
 
-            { "id": 2, "title": "need mock data..." }
+            [
+            { "id": 1, "title": "Kroger", date: "07-01-2014" starttime: "8:00am" },
+            { "id": 1, "title": "General Mills Internal", date: "07-01-2014" starttime: "1:00pm" }
+            ]
 
 # Group Presentations
 Presentation related resources of the **Presentation API**
