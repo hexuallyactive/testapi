@@ -24,7 +24,6 @@ This might need a paired websocket frame for state changes from other inputs
 + Response 200 (application/json)
     + Body
     
-            {"data":
                 [{
                   "id": 1, "name": "Welcome", "active": true
                 }, {
@@ -32,7 +31,6 @@ This might need a paired websocket frame for state changes from other inputs
                 }, {
                   "id": 3, "name": "Break", "active": false
                 }]
-            }
   
 ## Mode Select [/mode/{id}]
 
@@ -53,7 +51,6 @@ Display control
 + Response 200 (application/json)
     + Body
     
-            {"data":
                 [{
                   "id": 1, "name": "Left Arc Exterior", "type": "primary"
                 }, {
@@ -79,7 +76,6 @@ Display control
                 }, {
                   "id": 12, "name": "Virtual Store", "type": "secondary"
                 }]
-            }
 
 # Group Feed
 Feed control
@@ -88,11 +84,9 @@ Feed control
 ### List all Feeds [GET]
 + Response 200 (application/json)
 
-        {"data":
         [{
           "id": 1, "name": "Test Feed"
         }]
-        }
   
 ## Feed Select [/feed/{id}]
 
@@ -113,13 +107,11 @@ Panorama application control
 ### List all Panoramas [GET]
 + Response 200 (application/json)
 
-        {"data":
         [{
           "id": 1, "name": "Panorama 1"
         }, {
           "id": 2, "name": "Panorama 2"
         }]
-        }
   
 ## Panorama Command [/panorama/{id}/command/{command}]
 
@@ -140,13 +132,11 @@ Consumer Insight application control
 ### List all Consumer Insights [GET]
 + Response 200 (application/json)
 
-        {"data":
         [{
           "id": 1, "name": "Insight 1"
         }, {
           "id": 2, "name": "Insight 2"
         }]
-        }
   
 ## Consumer Insight Command [/insight/{id}/command/{command}]   
 
@@ -197,13 +187,11 @@ Visit control
 ### List all Visits [GET]
 + Response 200 (application/json)
 
-        {"data":
         [{
           "id": 1, "name": "Visit 1",
         }, {
           "id": 2, "name": "Visit 2"
         }]
-        }
             
 ## Visit [/visit/{id}]
 A single Visit object with all its details
@@ -216,12 +204,10 @@ A single Visit object with all its details
 
     + Body
 
-            {"data":
             [
             { "id": 1, "title": "Kroger", date: "07-01-2014" starttime: "8:00am" },
             { "id": 1, "title": "General Mills Internal", date: "07-01-2014" starttime: "1:00pm" }
             ]
-            }
             
 ## Current Visit [/currentvisit]
 A single object with the current visit id, or 0 if none.
@@ -229,10 +215,8 @@ A single object with the current visit id, or 0 if none.
 ### Return current visit [GET]
 + Response 200 (application/json)
 
-        {"data":
         {
           "id": 1, "name": "Visit 1"
-        }
         }
         
 ## Set current visit [/currentvisit/{id}]
@@ -253,13 +237,11 @@ Presentation related resources of the **Presentation API**
 ### List all Presentations [GET]
 + Response 200 (application/json)
 
-        {"data":
         [{
           "id": 1, "title": "p1"
         }, {
           "id": 2, "title": "p2"
         }]
-        }
             
 ## Presentation [/presentation/{id}]
 A single Presentation object with all its details
@@ -272,8 +254,6 @@ A single Presentation object with all its details
 
     + Body
 
-            {"data":
             { "id": 1, "title": "Need mock data" }
-            }
 
 
