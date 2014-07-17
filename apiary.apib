@@ -167,12 +167,14 @@ Asset control
 ### List all Assets [GET]
 + Response 200 (application/json)
 
-        {"data":
-        [
-        {"id": 1, "title": "Handouts", [{"id": 2, "title": "A file.pdf"},{"id": 3, "title": "Another file.pdf"}]},
-        {"id": 4, "title": "Images", [{"id": 5, "title": "hero.png"},{"id": 6, "title": "hamburger.jpg"}]},
-        {"id": 4, "title": "Moar Images", []}
-        ]
+        {
+        "folders":
+            [{"id":"9","title":"New Folder"}],
+        "assets":
+            [
+            {"id":"7","title":"Koala","image":"http:\/\/gmi-dev.downstreamsandbox.com\/repository\/preview\/53c6ccd369323.jpg.png"},
+            {"id":"8","title":"Test Image","image":"http:\/\/gmi-dev.downstreamsandbox.com\/repository\/preview\/53c6cd236cee1.jpg.png"}
+            ]
         }
 
 ## Asset Placement [/asset/{id}/sourceid/{sourceid}] 
