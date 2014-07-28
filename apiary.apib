@@ -24,13 +24,23 @@ This might need a paired websocket frame for state changes from other inputs
 + Response 200 (application/json)
     + Body
     
-                [{
-                  "id": 1, "name": "Welcome", "active": true
-                }, {
-                  "id": 2, "name": "Presentation", "active": false
-                }, {
-                  "id": 3, "name": "Break", "active": false
-                }]
+            [
+              {
+                "ModeId": "1",
+                "Mode": "Welcome",
+                "active": true
+              },
+              {
+                "ModeId": "2",
+                "Mode": "Presentation",
+                "active": false
+              },
+              {
+                "ModeId": "3",
+                "Mode": "Break",
+                "active": false
+              }
+            ]
   
 ## Mode Select [/mode/{id}]
 
@@ -52,29 +62,29 @@ Display control
     + Body
     
                 [{
-                  "id": 1, "name": "Left Arc Exterior", "type": "primary"
+                  "DisplayId": 1, "name": "Left Arc Exterior", "type": "primary"
                 }, {
-                  "id": 2, "name": "Left Arc Interior", "type": "primary"
+                  "DisplayId": 2, "name": "Left Arc Interior", "type": "primary"
                 }, {
-                  "id": 3, "name": "Center", "type": "primary"
+                  "DisplayId": 3, "name": "Center", "type": "primary"
                 }, {
-                  "id": 4, "name": "Right Arc Interior", "type": "primary"
+                  "DisplayId": 4, "name": "Right Arc Interior", "type": "primary"
                 }, {
-                  "id": 5, "name": "Right Arc Exterior", "type": "primary"
+                  "DisplayId": 5, "name": "Right Arc Exterior", "type": "primary"
                 }, {
-                  "id": 6, "name": "Participant Tablet", "type": "primary"
+                  "DisplayId": 6, "name": "Participant Tablet", "type": "primary"
                 }, {
-                  "id": 7, "name": "Beacon", "type": "secondary"
+                  "DisplayId": 7, "name": "Beacon", "type": "secondary"
                 }, {
-                  "id": 8, "name": "Learn and Share Table", "type": "secondary"
+                  "DisplayId": 8, "name": "Learn and Share Table", "type": "secondary"
                 }, {
-                  "id": 9, "name": "Conference Room 1", "type": "secondary"
+                  "DisplayId": 9, "name": "Conference Room 1", "type": "secondary"
                 }, {
-                  "id": 10, "name": "Conference Room 2", "type": "secondary"
+                  "DisplayId": 10, "name": "Conference Room 2", "type": "secondary"
                 }, {
-                  "id": 11, "name": "Kitchen", "type": "secondary"
+                  "DisplayId": 11, "name": "Kitchen", "type": "secondary"
                 }, {
-                  "id": 12, "name": "Virtual Store", "type": "secondary"
+                  "DisplayId": 12, "name": "Virtual Store", "type": "secondary"
                 }]
 
 # Group Feed
