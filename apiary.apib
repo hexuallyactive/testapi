@@ -56,7 +56,7 @@ This might need a paired websocket frame for state changes from other inputs
 # Group Displays
 Display control
 
-## Displays Collection [/display]
+## Displays Collection [/displays]
 ### List all available Sources [GET]
 + Response 200 (application/json)
     + Body
@@ -87,10 +87,24 @@ Display control
                   "DisplayId": 12, "name": "Virtual Store", "type": "secondary"
                 }]
 
+# Group Sources
+Sources
+
+## Sources Collection [/sources]
+### List all available Sources [GET]
++ Response 200 (application/json)
+    + Body
+    
+                [{
+                  "SourceId": 1, "name": "Rack PC 1 - Tibco Spotfire"
+                }, {
+                  "SourceId": 2, "name": "Rack PC 2 - Donuts"
+                }]
+
 # Group Feed
 Feed control
 
-## Feed Collection [/feed]
+## Feed Collection [/feeds]
 ### List all Feeds [GET]
 + Response 200 (application/json)
 
@@ -112,7 +126,7 @@ Feed control
 # Group Panorama
 Panorama application control
 
-## Panorama Collection [/panorama]
+## Panorama Collection [/panoramas?visit_id={id}]
 
 ### List all Panoramas [GET]
 + Response 200 (application/json)
@@ -123,38 +137,12 @@ Panorama application control
           "id": 2, "name": "Panorama 2"
         }]
   
-## Panorama Command [/panorama/{id}/command/{command}]
+## Panorama Command [/panorama/{id}]
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Panorama to perform action with.
-    + command (required, string, ``) ... String `command` accepts `activate`, `close`
 
 ### Send Panorama Command [PUT]
-+ Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
-
-# Group Consumer Insight
-Consumer Insight application control
-
-## Consumer Insight Collection [/insight]
-### List all Consumer Insights [GET]
-+ Response 200 (application/json)
-
-        [{
-          "id": 1, "name": "Insight 1"
-        }, {
-          "id": 2, "name": "Insight 2"
-        }]
-  
-## Consumer Insight Command [/insight/{id}/command/{command}]   
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Consumer Insight to perform action with.
-    + command (required, string, ``) ... String `command` accepts `activate`, `prev` and `next`
-    
-### Send Consumer Insight Command [PUT]
 + Response 200 (application/json)
     + Body
     
@@ -163,7 +151,7 @@ Consumer Insight application control
 # Group Assets
 Asset control
 
-## Asset Collection [/assets/{id}]
+## Asset Collection [/assets?visit_id={id}]
 ### List all Assets [GET]
 + Response 200 (application/json)
 
@@ -177,11 +165,10 @@ Asset control
             ]
         }
 
-## Asset Placement [/asset/{id}/sourceid/{sourceid}] 
+## Asset Placement [/asset/{id}] 
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Asset to perform action with.
-    + sourceid (required, number, `1`) ... Numeric `sourceid` of the External Source to place Asset on
 
 ### Place Asset [PUT]
 + Response 200 (application/json)
