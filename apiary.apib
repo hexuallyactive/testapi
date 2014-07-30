@@ -236,5 +236,56 @@ A single Presentation object with all its details
     + Body
 
             { "id": 1, "title": "Need mock data" }
+            
+### Open Presentation [PUT]
++ Response 200 (application/json)
 
+    + Body
 
+            { "status": "ok" }
+            
+### Close Presentation [DELETE]
++ Response 200 (application/json)
+
+    + Body
+
+            { "status": "ok" }
+
+# Group Presentation Stepper          
+## Stepper [/presentationstepper] 
+
+### Presentation Stepper Forward [PUT]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+### Presentation Stepper Backward [DELETE]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+# Group Surveys
+## Surveys Collection [/surveys?visit_id={id}]
+### List all Surveys [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "p1"
+        }, {
+          "id": 2, "title": "p2"
+        }]
+        
+## Survey [/survey/{id}]
+A single Presentation object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Survey to perform action with.
+
+### Retrieve a Survey [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            { "id": 1, "title": "Need mock data" }
