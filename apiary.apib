@@ -19,7 +19,7 @@ Center Mode control
 ## Mode Collection 
 This might need a paired websocket frame for state changes from other inputs
 
-## Mode Collection [/mode]
+## Mode Collection [/modes]
 ### List all available Modes [GET]
 + Response 200 (application/json)
     + Body
@@ -46,6 +46,16 @@ This might need a paired websocket frame for state changes from other inputs
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Mode to perform action with.
+
+### Get Mode [GET]
++ Response 200 (application/json)
+    + Body
+    
+              {
+                "ModeId": "1",
+                "Mode": "Welcome",
+                "active": true
+              }}
 
 ### Set Mode Active [PUT]
 + Response 200 (application/json)
@@ -142,7 +152,47 @@ Panorama application control
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Panorama to perform action with.
 
-### Send Panorama Command [PUT]
+### Launch Panorama [PUT]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+### Close Panorama [DELETE]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+# Group Agenda
+Agenda application control
+  
+## Agenda Command [/agenda]
+
+### Launch Agenda [PUT]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+### Close Agenda [DELETE]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+# Group Participant List
+Participant application control
+  
+## Participant [/participant]
+
+### Launch Paticipant List [PUT]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+### Close Participant List [DELETE]
 + Response 200 (application/json)
     + Body
     
