@@ -98,7 +98,6 @@ Display control
                 }]
 
 # Group Sources
-Sources
 
 ## Sources Collection [/sources]
 ### List all available Sources [GET]
@@ -111,23 +110,24 @@ Sources
                   "SourceId": 2, "name": "Rack PC 2 - Donuts"
                 }]
 
-# Group Feed
-Feed control
+# Group Source Stepper          
+## Stepper [/sourcestepper/{id}] 
 
-## Feed Collection [/feeds]
-### List all Feeds [GET]
-+ Response 200 (application/json)
-
-        [{
-          "id": 1, "name": "Test Feed"
-        }]
-  
-## Feed Select [/feed/{id}]
+### Source Stepper Forward [PUT]
 
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Mode to perform action with.
+    + id (required, number, `1`) ... Numeric `id` of the Source.
 
-### Set Feed Active [PUT]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+### Source Stepper Backward [DELETE]
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Source.
+
 + Response 200 (application/json)
     + Body
     
