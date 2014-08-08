@@ -47,16 +47,6 @@ This might need a paired websocket frame for state changes from other inputs
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Mode to perform action with.
 
-### Get Mode [GET]
-+ Response 200 (application/json)
-    + Body
-    
-              {
-                "ModeId": "1",
-                "Mode": "Welcome",
-                "active": true
-              }}
-
 ### Set Mode Active [PUT]
 + Response 200 (application/json)
     + Body
@@ -149,6 +139,16 @@ Panorama application control
   
 ## Panorama Command [/panorama]
 
+### List all Panoramas [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "name": "Panorama 1"
+        }, {
+          "id": 2, "name": "Panorama 2"
+        }]
+
+## Panorama Command [/panorama/{id}]
 ### Launch Panorama [PUT]
 + Response 200 (application/json)
     + Body
@@ -164,7 +164,16 @@ Panorama application control
 # Group Agenda
 Agenda application control
   
-## Agenda Command [/agenda]
+## Agenda Items Collection [/agenda?visit_id={id}]
+
+### List all Agenda Items [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "name": "Panorama 1"
+        }, {
+          "id": 2, "name": "Panorama 2"
+        }]
 
 ### Launch Agenda [PUT]
 + Response 200 (application/json)
@@ -173,6 +182,14 @@ Agenda application control
             { "status": "ok" }
 
 ### Close Agenda [DELETE]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+## Agenda Display [/agenda/{id}]
+### Change Agenda App Display [PATCH]
+
 + Response 200 (application/json)
     + Body
     
@@ -195,34 +212,13 @@ Participant application control
     
             { "status": "ok" }
 
-# Group Assets
-Asset control
+## Participant Display [/participant/{id}]
+### Change Participant App Display [PATCH]
 
-## Asset Collection [/assets?visit_id={id}]
-### List all Assets [GET]
-+ Response 200 (application/json)
-
-        {
-        "folders":
-            [{"id":"9","title":"New Folder"}],
-        "assets":
-            [
-            {"id":"7","title":"Koala", "type": "Image", "image":"http:\/\/gmi-dev.downstreamsandbox.com\/repository\/preview\/53c6ccd369323.jpg.png"},
-            {"id":"8","title":"Test Image", "type": "PDF", "image":"http:\/\/gmi-dev.downstreamsandbox.com\/repository\/preview\/53c6cd236cee1.jpg.png"}
-            ]
-        }
-
-## Asset Placement [/asset/{id}] 
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Asset to perform action with.
-
-### Place Asset [PUT]
 + Response 200 (application/json)
     + Body
     
             { "status": "ok" }
-
 
 # Group Visits
 Visit control
@@ -271,48 +267,65 @@ Presentation related resources of the **Presentation API**
         }]
             
 ## Presentation [/presentation/{id}]
-A single Presentation object with all its details
+PUT with id 0 to close
+### Open/Close Presentation [PUT]
++ Response 200 (application/json)
+
+    + Body
+
+            { "status": "ok" }
+            
+# Group Presentation Steps
+
+## Presentation Steps Collection [/steps?presentation_id={id}]
+### List all Steps [GET]
++ Response 200 (application/json)
+
+        [{
+          "PresentationStepId": 1, "Name": "Step 1"
+        }, {
+          "PresentationStepId": 2, "Name": "Step 2"
+        }]
+
+## Set Current Step [/step/{id}] 
+
+### Set Current Step [PUT]
++ Response 200 (application/json)
+    + Body
+    
+            { "status": "ok" }
+
+# Group Assets
+Asset control
+
+## Asset Collection [/assets?visit_id={id}]
+### List all Assets [GET]
++ Response 200 (application/json)
+
+        {
+        "folders":
+            [{"id":"9","title":"New Folder"}],
+        "assets":
+            [
+            {"id":"7","title":"Koala", "type": "Image", "image":"http:\/\/gmi-dev.downstreamsandbox.com\/repository\/preview\/53c6ccd369323.jpg.png"},
+            {"id":"8","title":"Test Image", "type": "PDF", "image":"http:\/\/gmi-dev.downstreamsandbox.com\/repository\/preview\/53c6cd236cee1.jpg.png"}
+            ]
+        }
+
+## Asset Placement [/asset/{id}] 
 
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Presentation to perform action with.
+    + id (required, number, `1`) ... Numeric `id` of the Asset to perform action with.
 
-### Retrieve a Presentation [GET]
-+ Response 200 (application/json)
-
-    + Body
-
-            { "id": 1, "title": "Need mock data" }
-            
-### Open Presentation [PUT]
-+ Response 200 (application/json)
-
-    + Body
-
-            { "status": "ok" }
-            
-### Close Presentation [DELETE]
-+ Response 200 (application/json)
-
-    + Body
-
-            { "status": "ok" }
-
-# Group Presentation Stepper          
-## Stepper [/presentationstepper] 
-
-### Presentation Stepper Forward [PUT]
+### Place Asset [PUT]
 + Response 200 (application/json)
     + Body
     
             { "status": "ok" }
 
-### Presentation Stepper Backward [DELETE]
-+ Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
 
-# Group Surveys
+# Group Surveys - TBD
+<!--
 ## Surveys Collection [/surveys?visit_id={id}]
 ### List all Surveys [GET]
 + Response 200 (application/json)
@@ -336,7 +349,8 @@ A single Presentation object with all its details
 
             { "id": 1, "title": "Need mock data" }
             
-# Group Survey Stepper          
+# Group Survey Stepper - TBD
+
 ## Stepper [/surveystepper] 
 
 ### Survey Stepper Forward [PUT]
@@ -350,3 +364,4 @@ A single Presentation object with all its details
     + Body
     
             { "status": "ok" }
+-->
