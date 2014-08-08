@@ -193,7 +193,7 @@ Panorama application control
 # Group Agenda
 Agenda application control
   
-## Agenda Items Collection [/agendas?visit_id={id}]
+## Agenda Items Collection [/agendas/visitid={id}]
 
 ### List all Agenda Items [GET]
 + Request
@@ -203,11 +203,35 @@ Agenda application control
             Authentication: {token}
 + Response 200 (application/json)
 
-        [{
-          "id": 1, "name": "Panorama 1"
-        }, {
-          "id": 2, "name": "Panorama 2"
-        }]
+        [
+          {
+            "id": "1",
+            "datetime": "2014-08-07 08:00:00",
+            "presentations": []
+          },
+          {
+            "id": "4",
+            "datetime": "2014-08-08 04:00:00",
+            "presentations": []
+          },
+          {
+            "id": "7",
+            "datetime": "2014-08-08 08:00:00",
+            "presentations": [
+              "P1"
+            ]
+          },
+          {
+            "id": "6",
+            "datetime": "2014-08-08 08:15:00",
+            "presentations": []
+          },
+          {
+            "id": "5",
+            "datetime": "2014-08-08 13:30:00",
+            "presentations": []
+          }
+        ]
 
 ## Agenda Display [/agenda]
 ### Launch Agenda [PUT]
@@ -226,7 +250,7 @@ Agenda application control
             Authentication: {token}
 + Response 200 (application/json)
 
-## Agenda Display [/agenda/{id}]
+## Agenda Display [/agenda/{displayid}]
 ### Change Agenda App Display [PATCH]
 + Request
     + Headers
@@ -253,7 +277,7 @@ Participant application control
             Authentication: {token}
 + Response 200 (application/json)
 
-## Participant Display [/participant/{id}]
+## Participant Display [/participant/{displayid}]
 ### Change Participant App Display [PATCH]
 + Request
     + Headers
