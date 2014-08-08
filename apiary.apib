@@ -7,7 +7,7 @@ Presenter Toolbox API
 
 ## Authentication [/auth] 
 
-### Authenticate Credentials [POST]
+### Retrieve Auth Token [POST]
 + Response 200 (application/json)
     + Body
     
@@ -21,6 +21,13 @@ This might need a paired websocket frame for state changes from other inputs
 
 ## Mode Collection [/modes]
 ### List all available Modes [GET]
+
++ Request
+
+    + Headers
+
+            Authentication: {token}
+
 + Response 200 (application/json)
     + Body
     
@@ -48,16 +55,27 @@ This might need a paired websocket frame for state changes from other inputs
     + id (required, number, `1`) ... Numeric `id` of the Mode to perform action with.
 
 ### Set Mode Active [PUT]
+
++ Request
+
+    + Headers
+
+            Authentication: {token}
+
 + Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
 
 # Group Displays
 Display control
 
 ## Displays Collection [/displays]
 ### List all available Sources [GET]
+
++ Request
+
+    + Headers
+
+            Authentication: {token}
+
 + Response 200 (application/json)
     + Body
     
@@ -91,6 +109,12 @@ Display control
 
 ## Sources Collection [/sources]
 ### List all available Sources [GET]
++ Request
+
+    + Headers
+
+            Authentication: {token}
+            
 + Response 200 (application/json)
     + Body
     
@@ -108,20 +132,26 @@ Display control
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Source.
 
++ Request
+
+    + Headers
+
+            Authentication: {token}
+
 + Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
 
 ### Source Stepper Backward [DELETE]
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Source.
+    
++ Request
+
+    + Headers
+
+            Authentication: {token}
 
 + Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
             
 # Group Panorama
 Panorama application control
@@ -129,17 +159,12 @@ Panorama application control
 ## Panorama Collection [/panoramas?visit_id={id}]
 
 ### List all Panoramas [GET]
-+ Response 200 (application/json)
++ Request
 
-        [{
-          "id": 1, "name": "Panorama 1"
-        }, {
-          "id": 2, "name": "Panorama 2"
-        }]
-  
-## Panorama Command [/panorama]
+    + Headers
 
-### List all Panoramas [GET]
+            Authentication: {token}
+
 + Response 200 (application/json)
 
         [{
@@ -150,23 +175,32 @@ Panorama application control
 
 ## Panorama Command [/panorama/{id}]
 ### Launch Panorama [PUT]
++ Request
+
+    + Headers
+
+            Authentication: {token}
 + Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
 
 ### Close Panorama [DELETE]
++ Request
+
+    + Headers
+
+            Authentication: {token}
 + Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
 
 # Group Agenda
 Agenda application control
   
-## Agenda Items Collection [/agenda?visit_id={id}]
+## Agenda Items Collection [/agendas?visit_id={id}]
 
 ### List all Agenda Items [GET]
++ Request
+
+    + Headers
+
+            Authentication: {token}
 + Response 200 (application/json)
 
         [{
@@ -175,25 +209,30 @@ Agenda application control
           "id": 2, "name": "Panorama 2"
         }]
 
+## Agenda Display [/agenda]
 ### Launch Agenda [PUT]
++ Request
+
+    + Headers
+
+            Authentication: {token}
 + Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
 
 ### Close Agenda [DELETE]
++ Request
+
+    + Headers
+
+            Authentication: {token}
 + Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
 
 ## Agenda Display [/agenda/{id}]
 ### Change Agenda App Display [PATCH]
-
-+ Response 200 (application/json)
-    + Body
++ Request
+    + Headers
     
-            { "status": "ok" }
+            Authentication: {token}
++ Response 200 (application/json)
 
 # Group Participant List
 Participant application control
@@ -201,30 +240,36 @@ Participant application control
 ## Participant [/participant]
 
 ### Launch Paticipant List [PUT]
-+ Response 200 (application/json)
-    + Body
++ Request
+    + Headers
     
-            { "status": "ok" }
+            Authentication: {token}
++ Response 200 (application/json)
 
 ### Close Participant List [DELETE]
-+ Response 200 (application/json)
-    + Body
++ Request
+    + Headers
     
-            { "status": "ok" }
+            Authentication: {token}
++ Response 200 (application/json)
 
 ## Participant Display [/participant/{id}]
 ### Change Participant App Display [PATCH]
-
-+ Response 200 (application/json)
-    + Body
++ Request
+    + Headers
     
-            { "status": "ok" }
+            Authentication: {token}
++ Response 200 (application/json)
 
 # Group Visits
 Visit control
 
 ## Visits Collection [/visits]
 ### List all Visits [GET]
++ Request
+    + Headers
+    
+            Authentication: {token}
 + Response 200 (application/json)
 
         [{
@@ -233,31 +278,22 @@ Visit control
           "VisitId": 2, "MeetingName": "Visit 2", "active": false
         }]
             
-## Visit [/visit/{id}]
-A single Visit object with all its details
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Visit to perform action with.
-
-### Retrieve a Visit [GET]
-+ Response 200 (application/json)
-
-    + Body
-
-            [
-            { "VisitId": 1, "MeetingName": "Visit 1", "date": "07-01-2014" "starttime": "8:00am", "active": true }
-            ]
-            
 ### Set active visit [PUT]
++ Request
+    + Headers
+    
+            Authentication: {token}
 + Response 200 (application/json)
-
-            { "status": "ok" }
 
 # Group Presentations
 Presentation related resources of the **Presentation API**
 
 ## Presentations Collection [/presentations?visit_id={id}]
 ### List all Presentations [GET]
++ Request
+    + Headers
+    
+            Authentication: {token}
 + Response 200 (application/json)
 
         [{
@@ -269,16 +305,20 @@ Presentation related resources of the **Presentation API**
 ## Presentation [/presentation/{id}]
 PUT with id 0 to close
 ### Open/Close Presentation [PUT]
++ Request
+    + Headers
+    
+            Authentication: {token}
 + Response 200 (application/json)
-
-    + Body
-
-            { "status": "ok" }
             
 # Group Presentation Steps
 
 ## Presentation Steps Collection [/steps?presentation_id={id}]
 ### List all Steps [GET]
++ Request
+    + Headers
+    
+            Authentication: {token}
 + Response 200 (application/json)
 
         [{
@@ -290,6 +330,10 @@ PUT with id 0 to close
 ## Set Current Step [/step/{id}] 
 
 ### Set Current Step [PUT]
++ Request
+    + Headers
+    
+            Authentication: {token}
 + Response 200 (application/json)
     + Body
     
@@ -300,6 +344,10 @@ Asset control
 
 ## Asset Collection [/assets?visit_id={id}]
 ### List all Assets [GET]
++ Request
+    + Headers
+    
+            Authentication: {token}
 + Response 200 (application/json)
 
         {
@@ -318,6 +366,10 @@ Asset control
     + id (required, number, `1`) ... Numeric `id` of the Asset to perform action with.
 
 ### Place Asset [PUT]
++ Request
+    + Headers
+    
+            Authentication: {token}
 + Response 200 (application/json)
     + Body
     
