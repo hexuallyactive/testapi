@@ -334,7 +334,61 @@ Presentation related resources of the **Presentation API**
         }]
             
 ## Presentation [/presentation/{id}]
-PUT with id 0 to close
+
+### Presentation resource [GET]
++ Request
+    + Headers
+    
+            Authentication: {token}
++ Response 200 (application/json)
+
+            {
+              "PresentationId": "1",
+              "Title": "Prezi 1",
+              "steps": [
+                {
+                  "PresentationStepId": "1",
+                  "StepTypeId": "1",
+                  "StepType": "Generic",
+                  "Params": [],
+                  "Assets": [
+                    {
+                      "AssetId": "5",
+                      "Title": "l;j",
+                      "Thumb": "http://gmi-dev.downstreamsandbox.com/repository/preview/53e53ca06be58.jpg.png"
+                    }
+                  ]
+                },
+                {
+                  "PresentationStepId": "2",
+                  "StepTypeId": "2",
+                  "StepType": "Panorama",
+                  "Params": {
+                    "PanoramaId": "0"
+                  },
+                  "Assets": []
+                },
+                {
+                  "PresentationStepId": "3",
+                  "StepTypeId": "3",
+                  "StepType": "Consumer Insight",
+                  "Params": {
+                    "ConsumerInsightId": "0"
+                  },
+                  "Assets": []
+                },
+                {
+                  "PresentationStepId": "4",
+                  "StepTypeId": "4",
+                  "StepType": "Survey",
+                  "Params": {
+                    "SurveyId": "0"
+                  },
+                  "Assets": []
+                }
+              ]
+            }
+
 ### Open/Close Presentation [PUT]
 + Request
     + Headers
