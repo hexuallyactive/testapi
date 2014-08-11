@@ -192,31 +192,6 @@ Panorama application control
 
 # Group Agenda App
 Agenda application control
-
-## Agenda Items Collection [/agendatypes]
-
-### List all Agenda Items [GET]
-+ Request
-
-    + Headers
-
-            Authentication: {token}
-+ Response 200 (application/json)
-
-        [
-          {
-            "AgendaTypeId": "1",
-            "Type": "Orientation"
-          },
-          {
-            "AgendaTypeId": "2",
-            "Type": "Presentation"
-          },
-          {
-            "AgendaTypeId": "3",
-            "Type": "Pause"
-          }
-        ]
   
 ## Agenda Items Collection [/agendas/visitid={id}]
 
@@ -231,40 +206,35 @@ Agenda application control
         [
           {
             "AgendaId": "1",
-            "AgendaTypeId": "1",
             "AgendaDate": "2014-08-07 08:00:00",
             "Presentations": []
           },
           {
             "AgendaId": "4",
-            "AgendaTypeId": "3",
             "AgendaDate": "2014-08-08 04:00:00",
             "Presentations": []
           },
           {
             "AgendaId": "7",
-            "AgendaTypeId": "2",
             "AgendaDate": "2014-08-08 08:00:00",
             "Presentations": [
               {
-              "PresentationId": "1",
+              "PresentationId": "1"
               "Title": "Prezi 1"
               },
               {
-              "PresentationId": "7",
+              "PresentationId": "7"
               "Title": "Prezi 7"
-              },
+              }
             ]
           },
           {
             "AgendaId": "6",
-            "AgendaTypeId": "3",
             "AgendaDate": "2014-08-08 08:15:00",
             "Presentations": []
           },
           {
             "AgendaId": "5",
-            "AgendaTypeId": "2",
             "AgendaDate": "2014-08-08 13:30:00",
             "Presentations": []
           }
