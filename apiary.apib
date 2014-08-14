@@ -267,8 +267,6 @@ Display control
 ## Consumer Insight  [/consumerinsight]
 ### Change carousel - takes a consumerinsight model [PATCH]
 
-Access-Control-Allow-Methods: POST, GET, PATCH, OPTIONS
-
 + Response 200 (application/json)
 
             
@@ -389,9 +387,13 @@ Participant application control
   
 ## Participant [/participant]
 
++ Request
+    + Headers
+    
+            Access-Control-Allow-Methods: POST, GET, PATCH, OPTIONS
+
 ### Launch Paticipant List [PUT]
 + Request
-    + Access-Control-Allow-Methods: POST, GET, PATCH, OPTIONS
     + Headers
     
             Authentication: {token}
