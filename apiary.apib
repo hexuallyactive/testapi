@@ -391,6 +391,17 @@ Participant application control
   
 ## Participant [/participant]
 
+### Launch Paticipant List [OPTIONS]
++ Request
+    + Headers
+    
+            Authentication: {token}
++ Response 200 (application/json)
+
+    + Header
+    
+            Access-Control-Allow-Methods: OPTIONS, GET, POST, PATCH
+
 ### Launch Paticipant List [PUT]
 + Request
     + Headers
@@ -412,10 +423,6 @@ Participant application control
     
             Authentication: {token}
 + Response 200 (application/json)
-
-    + Header
-    
-            Access-Control-Allow-Methods: OPTIONS, GET, POST, PATCH
 
 # Group Visits
 Visit control
