@@ -265,13 +265,21 @@ Display control
 ## Group Consumer Insight Collection
 
 ## Consumer Insight  [/consumerinsight]
-### Change carousel - takes a consumerinsight model [PATCH]
 
+### [OPTIONS]
++ Request
+    + Headers
+    
+            Authentication: {token}
 + Response 200 (application/json)
 
     + Header
     
-            Access-Control-Allow-Methods: OPTIONS, GET, POST, PATCH
+            Access-Control-Allow-Methods: OPTIONS, PATCH
+
+### Change carousel - takes a consumerinsight model [PATCH]
+
++ Response 200 (application/json)
 
             
 # Group Panorama App
