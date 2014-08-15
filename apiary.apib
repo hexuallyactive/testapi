@@ -78,31 +78,116 @@ Display control
 + Response 200 (application/json)
     + Body
     
-                [{
-                  "DisplayId": 1, "Name": "Left Arc Exterior", "Type": "primary"
-                }, {
-                  "DisplayId": 2, "Name": "Left Arc Interior", "Type": "primary"
-                }, {
-                  "DisplayId": 3, "Name": "Center", "Type": "primary"
-                }, {
-                  "DisplayId": 4, "Name": "Right Arc Interior", "Type": "primary"
-                }, {
-                  "DisplayId": 5, "Name": "Right Arc Exterior", "Type": "primary"
-                }, {
-                  "DisplayId": 6, "Name": "Participant Tablet", "Type": "primary"
-                }, {
-                  "DisplayId": 7, "Name": "Beacon", "Type": "secondary"
-                }, {
-                  "DisplayId": 8, "Name": "Learn and Share Table", "Type": "secondary"
-                }, {
-                  "DisplayId": 9, "Name": "Conference Room 1", "Type": "secondary"
-                }, {
-                  "DisplayId": 10, "Name": "Conference Room 2", "Type": "secondary"
-                }, {
-                  "DisplayId": 11, "Name": "Kitchen", "Type": "secondary"
-                }, {
-                  "DisplayId": 12, "Name": "Virtual Store", "Type": "secondary"
-                }]
+            [
+              {
+                "DisplayId": "1",
+                "Name": "Left Arc Exterior",
+                "Type": "secondary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
+              },
+              {
+                "DisplayId": "2",
+                "Name": "Left Arc Interior",
+                "Type": "primary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
+              },
+              {
+                "DisplayId": "3",
+                "Name": "Center",
+                "Type": "primary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
+              },
+              {
+                "DisplayId": "4",
+                "Name": "Right Arc Interior",
+                "Type": "primary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
+              },
+              {
+                "DisplayId": "5",
+                "Name": "Right Arc Exterior",
+                "Type": "secondary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
+              },
+              {
+                "DisplayId": "6",
+                "Name": "Participant Tablet",
+                "Type": "primary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
+              },
+              {
+                "DisplayId": "7",
+                "Name": "Beacon",
+                "Type": "secondary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
+              },
+              {
+                "DisplayId": "8",
+                "Name": "Learn and Share Table",
+                "Type": "secondary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
+              },
+              {
+                "DisplayId": "9",
+                "Name": "Conference Room 1",
+                "Type": "secondary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
+              },
+              {
+                "DisplayId": "10",
+                "Name": "Conference Room 2",
+                "Type": "secondary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
+              },
+              {
+                "DisplayId": "11",
+                "Name": "Kitchen",
+                "Type": "secondary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
+              },
+              {
+                "DisplayId": "12",
+                "Name": "Virtual Store",
+                "Type": "secondary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
+              }
+            ]
 
 # Group Sources
 
@@ -497,18 +582,6 @@ Presentation related resources of the **Presentation API**
               "Title": "Prez 1",
               "steps": [
                 {
-                  "PresentationStepId": "3",
-                  "Title": "Step 3",
-                  "StepTypeId": "3",
-                  "StepType": "Consumer Insight",
-                  "Params": {
-                    "LifeMissionId": "3",
-                    "LifeMissionStepId": "0"
-                  },
-                  "Assets": [],
-                  "Sources": []
-                },
-                {
                   "PresentationStepId": "1",
                   "Title": "Test step",
                   "StepTypeId": "1",
@@ -521,8 +594,21 @@ Presentation related resources of the **Presentation API**
                       "Title": "l;j",
                       "Thumb": "http://gmi-dev.downstreamsandbox.com/repository/preview/53e572204b027.jpg.png",
                       "PageCount": 0,
+                      "Page": 0,
                       "Locked": 0,
-                      "Fullscreen": 0
+                      "Fullscreen": 0,
+                      "Playing": 0
+                    },
+                    {
+                      "AssetId": "15",
+                      "Type": "PDF",
+                      "Title": "Brofist",
+                      "Thumb": "http://gmi-dev.downstreamsandbox.com/repository/preview/53eb8970158ed.pdf.png",
+                      "PageCount": 7,
+                      "Page": 0,
+                      "Locked": 0,
+                      "Fullscreen": 0,
+                      "Playing": 0
                     }
                   ],
                   "Sources": [
@@ -541,6 +627,18 @@ Presentation related resources of the **Presentation API**
                       "Fullscreen": 0
                     }
                   ]
+                },
+                {
+                  "PresentationStepId": "3",
+                  "Title": "Step 3",
+                  "StepTypeId": "3",
+                  "StepType": "Consumer Insight",
+                  "Params": {
+                    "LifeMissionId": "3",
+                    "LifeMissionStepId": "1"
+                  },
+                  "Assets": [],
+                  "Sources": []
                 },
                 {
                   "PresentationStepId": "2",
@@ -577,8 +675,10 @@ Presentation related resources of the **Presentation API**
                       "Title": "l;j",
                       "Thumb": "http://gmi-dev.downstreamsandbox.com/repository/preview/53e572204b027.jpg.png",
                       "PageCount": 0,
+                      "Page": 0,
                       "Locked": 0,
-                      "Fullscreen": 0
+                      "Fullscreen": 0,
+                      "Playing": 0
                     }
                   ],
                   "Sources": []
