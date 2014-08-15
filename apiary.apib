@@ -524,6 +524,10 @@ Participant application control
             Authentication: {token}
 + Response 200 (application/json)
 
+    + Header
+    
+            Access-Control-Allow-Methods: OPTIONS, PUT, PATCH, DELETE
+
 # Group Visits
 Visit control
 
@@ -739,7 +743,7 @@ Presentation related resources of the **Presentation API**
             Authentication: {token}
 + Response 200 (application/json)
 
-# Group Presentation Asset
+# Group Asset and Source Control
 
 ## Modify Asset [/assetcontrol/{id}] 
 
@@ -750,7 +754,10 @@ Presentation related resources of the **Presentation API**
             Authentication: {token}
 + Response 200 (application/json)
 
-# Group Presentation Source
+    + Header
+    
+            Access-Control-Allow-Methods: OPTIONS, PUT, PATCH, DELETE
+
 
 ## Modify Source [/sourcecontrol/{id}] 
 
@@ -760,6 +767,10 @@ Presentation related resources of the **Presentation API**
     
             Authentication: {token}
 + Response 200 (application/json)
+
+    + Header
+    
+            Access-Control-Allow-Methods: OPTIONS, PUT, PATCH, DELETE
 
 # Group Assets - TBD
 Asset control
