@@ -646,7 +646,7 @@ Participant application control
 # Group Learn and Share App
 Learn and Share application control
 
-## Lean and share Collection [/learn]
+## Lean and share Collection [/learnobjects]
 
 ### List all Objects [GET]
 + Request
@@ -657,11 +657,32 @@ Learn and Share application control
 
 + Response 200 (application/json)
 
-        [{
-          "id": 1, "name": "Panorama 1"
-        }, {
-          "id": 2, "name": "Panorama 2"
-        }]
+            [
+              {
+                "LearnObjectId": "4",
+                "ObjectPairId": "456",
+                "LearnObjectCategoryId": "1",
+                "Title": "Multi Grain Cheerios Dark Chocolate Crunch",
+                "created_at": "2014-08-19 17:49:14",
+                "updated_at": "2014-08-27 17:27:04"
+              },
+              {
+                "LearnObjectId": "3",
+                "ObjectPairId": "3",
+                "LearnObjectCategoryId": "1",
+                "Title": "Raisin Bran",
+                "created_at": "2014-08-12 13:43:55",
+                "updated_at": "2014-08-21 10:16:18"
+              },
+              {
+                "LearnObjectId": "2",
+                "ObjectPairId": "1",
+                "LearnObjectCategoryId": "1",
+                "Title": "Test Object",
+                "created_at": "2014-08-12 13:39:10",
+                "updated_at": "2014-08-13 11:27:26"
+              }
+            ]
 
 ## Open [/learnapp/{id}]
 
