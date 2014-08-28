@@ -616,8 +616,9 @@ Visit control
 
 # Group Presentations
 Presentation related resources of the **Presentation API**
+If visitid is supplied, collection includes only presentations for that visit, otherwise ALL presentations in the system.
 
-## Presentations Collection [/presentations?visit_id={id}]
+## Presentations Collection [/presentations?visitid={id}]
 ### List all Presentations [GET]
 + Request
     + Headers
@@ -807,7 +808,16 @@ Presentation related resources of the **Presentation API**
               ]
             }
 
-### Open/Close Presentation [PUT]
+### Open Presentation [PUT]
++ Request
+    + Headers
+    
+            Authentication: {token}
++ Response 200 (application/json)
+
+## Set Current Step [/presentation] 
+
+### Close Presentation [DELETE]
 + Request
     + Headers
     
