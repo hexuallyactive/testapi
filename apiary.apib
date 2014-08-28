@@ -260,6 +260,19 @@ Displays
               }
             ]
 
+## Modify Source [/sourcecontrol/{id}] 
+Takes a Source model
+### Change source display params [PATCH]
++ Request
+    + Headers
+    
+            Authentication: {token}
++ Response 200 (application/json)
+
+    + Header
+    
+            Access-Control-Allow-Methods: OPTIONS, PUT, PATCH, DELETE
+
 # Group Source Stepper          
 ## Stepper [/sourcestepper/{id}] 
 
@@ -879,7 +892,7 @@ If visitid is supplied, collection includes only presentations for that visit, o
             Authentication: {token}
 + Response 200 (application/json)
 
-# Group Asset and Source Control
+# Group Assets
 
 ## Modify Asset [/assetcontrol/{id}] 
 Takes an Asset model
@@ -893,23 +906,6 @@ Takes an Asset model
     + Header
     
             Access-Control-Allow-Methods: OPTIONS, PUT, PATCH, DELETE
-
-
-## Modify Source [/sourcecontrol/{id}] 
-Takes a Source model
-### Change source display params [PATCH]
-+ Request
-    + Headers
-    
-            Authentication: {token}
-+ Response 200 (application/json)
-
-    + Header
-    
-            Access-Control-Allow-Methods: OPTIONS, PUT, PATCH, DELETE
-
-# Group Assets
-Asset control
 
 
 ## Asset Collection [/assets?visit_id={id}]
