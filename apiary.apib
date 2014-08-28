@@ -47,7 +47,8 @@ Center Mode control
                 "active": false
               }
             ]
-  
+
+
 ## Mode Select [/mode/{id}]
 
 + Parameters
@@ -64,7 +65,7 @@ Center Mode control
 + Response 200 (application/json)
 
 # Group Displays
-Display control
+Displays
 
 ## Displays Collection [/displays]
 ### List all available Sources [GET]
@@ -186,6 +187,24 @@ Display control
                 "Height": "0",
                 "created_at": "0000-00-00 00:00:00",
                 "updated_at": "0000-00-00 00:00:00"
+              },
+              {
+                "DisplayId": "13",
+                "Name": "Left PPI",
+                "Type": "secondary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
+              },
+              {
+                "DisplayId": "14",
+                "Name": "Right PPI",
+                "Type": "secondary",
+                "Width": "0",
+                "Height": "0",
+                "created_at": "0000-00-00 00:00:00",
+                "updated_at": "0000-00-00 00:00:00"
               }
             ]
 
@@ -202,11 +221,32 @@ Display control
 + Response 200 (application/json)
     + Body
     
-                [{
-                  "SourceId": 1, "Name": "Rack PC 1 - Tibco Spotfire"
-                }, {
-                  "SourceId": 2, "Name": "Rack PC 2 - Donuts"
-                }]
+            [
+              {
+                "SourceId": "1",
+                "Name": "Rack PC 1: Tibco Spotfire",
+                "ResourceId": "98",
+                "SourceKey": "0",
+                "created_at": "2014-08-07 21:43:32",
+                "updated_at": "2014-08-13 13:59:53"
+              },
+              {
+                "SourceId": "2",
+                "Name": "Another Source",
+                "ResourceId": "99",
+                "SourceKey": "2",
+                "created_at": "2014-08-13 14:00:53",
+                "updated_at": "2014-08-13 14:00:53"
+              },
+              {
+                "SourceId": "3",
+                "Name": "Yet Another Source",
+                "ResourceId": "100",
+                "SourceKey": "3",
+                "created_at": "2014-08-13 14:01:06",
+                "updated_at": "2014-08-13 14:01:06"
+              }
+            ]
 
 # Group Source Stepper          
 ## Stepper [/sourcestepper/{id}] 
@@ -348,8 +388,9 @@ Display control
 
 
 ## Group Consumer Insight App
+Consumer Insight Application Control
 
-## Consumer Insight  [/consumerinsight]
+## Consumer Insight  [/consumerinsightapp]
 
 ### [OPTIONS]
 + Request
@@ -363,6 +404,24 @@ Display control
     + Header
     
             Access-Control-Allow-Methods: OPTIONS, PATCH
+            
+### Open Consumer Insight App [PUT]
++ Request
+    + Headers
+    
+            Authentication: {token}
+            
+
++ Response 200 (application/json)
+
+### Close Consumer Insight App [DELETE]
++ Request
+    + Headers
+    
+            Authentication: {token}
+            
+
++ Response 200 (application/json)
 
 ### Change carousel - takes a consumerinsight model [PATCH]
 + Request
