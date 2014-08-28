@@ -961,7 +961,46 @@ If visitid is supplied, collection includes only presentations for that visit, o
 
 # Group Assets
 
-## Asset Collection [/assets]
+## Asset Groups [/assetgroups]
+### List all Asset Groups [GET]
++ Request
+    + Headers
+    
+            Authentication: {token}
++ Response 200 (application/json)
+
+            [
+              {
+                "RootId": 1,
+                "Name": "GMI Assets"
+              },
+              {
+                "RootId": 2,
+                "Name": "Glorp, Inc."
+              },
+              {
+                "RootId": 3,
+                "Name": "Happy Hair & Nail"
+              },
+              {
+                "RootId": 4,
+                "Name": "Hmmmmm"
+              },
+              {
+                "RootId": 7,
+                "Name": "Kroger"
+              },
+              {
+                "RootId": 5,
+                "Name": "meep"
+              },
+              {
+                "RootId": 6,
+                "Name": "Stay Alive"
+              }
+            ]
+
+## Asset Collection [/assets/rootid/{id}]
 ### List all Assets [GET]
 + Request
     + Headers
