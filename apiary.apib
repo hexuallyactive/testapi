@@ -482,12 +482,13 @@ Panorama application control
         }]
 
 ## Open [/panoramaapp/{id}]
-Send ClearAssets 0/1
+Send ClearAssets 0/1 as JSON body
 ### Launch Panorama [PUT]
 + Request
     
+    + Model
     {
-    "ClearAssets": 0
+        "ClearAssets": 0
     }
 
     + Headers
