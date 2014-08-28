@@ -661,9 +661,16 @@ Visit control
         }]
             
 
-## Visit Resource [/visit/{id}]
+## Visit Control [/visit/{id}]
             
 ### Set active visit [PUT]
++ Request
+    + Headers
+    
+            Authentication: {token}
++ Response 200 (application/json)
+
+### Set no active visit/close visit [DELETE]
 + Request
     + Headers
     
