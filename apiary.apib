@@ -423,7 +423,17 @@ Consumer Insight Application Control
 
 + Response 200 (application/json)
 
-### Change carousel - takes a consumerinsight model [PATCH]
+## Consumer Insight  [/consumerinsightstep]
+### Send step forward command [PUT]
++ Request
+    + Headers
+    
+            Authentication: {token}
+            
+
++ Response 200 (application/json)
+
+### Send step backward command [DELETE]
 + Request
     + Headers
     
@@ -436,7 +446,8 @@ Consumer Insight Application Control
 # Group Panorama App
 Panorama application control
 
-## Panorama Collection [/panoramas?visit_id={id}]
+## Panorama Collection [/panoramas?visitid={id}]
+If visitid is supplied, collection includes only panoramas for that visit, otherwise ALL panoramas in the system.
 
 ### List all Panoramas [GET]
 + Request
@@ -453,7 +464,7 @@ Panorama application control
           "id": 2, "name": "Panorama 2"
         }]
 
-## Panorama Command [/panorama/{id}]
+## Panorama Command [/panoramaapp/{id}]
 ### Launch Panorama [PUT]
 + Request
 
@@ -520,7 +531,7 @@ Agenda application control
           }
         ]
 
-## Agenda Display [/agenda]
+## Agenda App Control [/agendaapp]
 ### Launch Agenda [PUT]
 + Request
 
@@ -537,18 +548,28 @@ Agenda application control
             Authentication: {token}
 + Response 200 (application/json)
 
-## Agenda Display [/agenda/{displayid}]
-### Change Agenda App Display [PATCH]
+## Agenda Pager [/agendapager]
+### Page forward [PUT]
 + Request
+
     + Headers
-    
+
             Authentication: {token}
 + Response 200 (application/json)
+
+### Page backward [DELETE]
++ Request
+
+    + Headers
+
+            Authentication: {token}
++ Response 200 (application/json)
+
 
 # Group Participant App
 Participant application control
   
-## Participant [/participant]
+## Participant [/participantapp]
 
 ### [OPTIONS]
 + Request
@@ -561,22 +582,33 @@ Participant application control
     
             Access-Control-Allow-Methods: OPTIONS, PUT, PATCH, DELETE
 
-### Launch Paticipant List [PUT]
+### Launch Paticipant App [PUT]
 + Request
     + Headers
     
             Authentication: {token}
 + Response 200 (application/json)
 
-### Close Participant List [DELETE]
+### Close Participant App [DELETE]
 + Request
     + Headers
     
             Authentication: {token}
 + Response 200 (application/json)
 
-## Participant Display [/participant/{displayid}]
-### Change Participant App Display [PATCH]
+## Participant Pager [/participantpager]
+### Page Forward [PUT]
++ Request
+    + Headers
+    
+            Authentication: {token}
++ Response 200 (application/json)
+
+    + Header
+    
+            Access-Control-Allow-Methods: OPTIONS, PUT, PATCH, DELETE
+            
+### Page backward [DELETE]
 + Request
     + Headers
     
