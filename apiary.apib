@@ -642,6 +642,45 @@ Participant application control
     + Header
     
             Access-Control-Allow-Methods: OPTIONS, PUT, PATCH, DELETE
+            
+# Group Learn and Share App
+Learn and Share application control
+
+## Lean and share Collection [/learnandshare]
+
+### List all Objects [GET]
++ Request
+
+    + Headers
+
+            Authentication: {token}
+
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "name": "Panorama 1"
+        }, {
+          "id": 2, "name": "Panorama 2"
+        }]
+
+## Open [/learnandshareapp/{id}]
+
+### Launch App [PUT]
++ Request
+
+    + Headers
+
+            Authentication: {token}
++ Response 200 (application/json)
+
+## Close [/learnandshareapp/]
+### Close App [DELETE]
++ Request
+
+    + Headers
+
+            Authentication: {token}
++ Response 200 (application/json)
 
 # Group Visits
 Visit control
