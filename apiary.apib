@@ -485,11 +485,6 @@ Panorama application control
 Send ClearAssets 0/1 as JSON body
 ### Launch Panorama [PUT]
 + Request
-    
-    + Model
-    {
-        "ClearAssets": 0
-    }
 
     + Headers
 
@@ -966,6 +961,22 @@ If visitid is supplied, collection includes only presentations for that visit, o
 + Response 200 (application/json)
             
 # Group Presentation Steps
+
+## Set Current Step [/presentationcontrol] 
+
+### Step forward [POST]
++ Request
+    + Headers
+    
+            Authentication: {token}
++ Response 200 (application/json)
+
+### Step backward [DELETE]
++ Request
+    + Headers
+    
+            Authentication: {token}
++ Response 200 (application/json)
 
 ## Set Current Step [/presentationcontrol/{id}] 
 
