@@ -1065,17 +1065,7 @@ Takes an Asset model
     
             Access-Control-Allow-Methods: OPTIONS, PUT, PATCH, DELETE
 
-# Group Surveys - TBD
-<!--
-## Surveys Collection [/surveys?visit_id={id}]
-### List all Surveys [GET]
-+ Response 200 (application/json)
-
-        [{
-          "id": 1, "title": "p1"
-        }, {
-          "id": 2, "title": "p2"
-        }]
+# Group Survey App Control
         
 ## Survey [/survey/{id}]
 A single Presentation object with all its details
@@ -1083,26 +1073,20 @@ A single Presentation object with all its details
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Survey to perform action with.
 
-### Retrieve a Survey [GET]
+### Open Survey [PUT]
 + Response 200 (application/json)
 
-    + Body
-
-            { "id": 1, "title": "Need mock data" }
-            
-# Group Survey Stepper - TBD
-
-## Stepper [/surveystepper] 
-
-### Survey Stepper Forward [PUT]
+### Close Survey [DELETE]
 + Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
 
-### Survey Stepper Backward [DELETE]
+
+## Survey Questions [/surveyapp] 
+
+### Next Question [PUT]
 + Response 200 (application/json)
-    + Body
-    
-            { "status": "ok" }
--->
+
+
+###  Previous Question [DELETE]
++ Response 200 (application/json)
+
+
