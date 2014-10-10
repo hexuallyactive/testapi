@@ -1066,6 +1066,25 @@ Takes an Asset model
             Access-Control-Allow-Methods: OPTIONS, PUT, PATCH, DELETE
 
 # Group Survey App Control
+
+## List of surveys [/surveys/visitid/{id}]
+
++ Parameters
+    + id (optional, number, `1`) ... Numeric `id` of the visit
+
+### List all Asset Groups [GET]
++ Request
+    + Headers
+    
+            Authentication: {token}
++ Response 200 (application/json)
+
+            [
+              {
+                "SurveyId": 1,
+                "Title": "Some survey"
+              }
+            ]
         
 ## Open Survey [/survey/{id}]
 
